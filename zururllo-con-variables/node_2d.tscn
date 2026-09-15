@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://biiw443faryao"]
+
+[ext_resource type="Texture2D" uid="uid://sb5kf3gyisa3" path="res://icon.svg" id="1_epypp"]
+[ext_resource type="Script" uid="uid://bitjv0b5nnpy2" path="res://Scripts/character_body_2d.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://o3jk7km3t1t5" path="res://Scripts/Sprites/Fighter/Idle.png" id="2_0e48y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6r6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfkbx"]
+size = Vector2(262, 84.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(0, 34, 128, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(128, 34, 128, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(256, 34, 128, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(384, 34, 128, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(512, 34, 128, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(640, 34, 128, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfkbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epypp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hol4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdubu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d21ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj586")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77to7"]
+radius = 319.99976
+height = 1151.999
+
+[node name="Node2D" type="Node2D" unique_id=912788168]
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1945580347]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_q6r6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=2121905263]
+shape = SubResource("RectangleShape2D_lfkbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo" unique_id=1907578046]
+position = Vector2(-7.6293945e-06, -9.536743e-07)
+scale = Vector2(2.09375, 0.671875)
+texture = ExtResource("1_epypp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1325357673]
+position = Vector2(2, -70)
+script = ExtResource("1_wtcfe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1878213253]
+position = Vector2(-1.0000066, -40)
+scale = Vector2(0.7578126, 0.80593544)
+sprite_frames = SubResource("SpriteFrames_lfkbx")
+frame_progress = 0.41478267
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1821263747]
+position = Vector2(-3, -34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=785280473]
+position = Vector2(-1.999996, -31)
+scale = Vector2(0.031250026, 0.066162124)
+shape = SubResource("CapsuleShape2D_77to7")
