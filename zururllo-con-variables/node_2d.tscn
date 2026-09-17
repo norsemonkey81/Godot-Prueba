@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://biiw443faryao"]
 
-[ext_resource type="Texture2D" uid="uid://sb5kf3gyisa3" path="res://icon.svg" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://yq1hlddjk3fa" path="res://Scripts/Captura de pantalla 2026-09-17 122859.png" id="1_kdubu"]
 [ext_resource type="Script" uid="uid://bitjv0b5nnpy2" path="res://Scripts/character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://o3jk7km3t1t5" path="res://Scripts/Sprites/Fighter/Idle.png" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://b3xmmk3j6qqwi" path="res://Scripts/Sprites/Fighter/Walk.png" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://bp3c6ljb71x6h" path="res://Scripts/Sprites/Fighter/Jump.png" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://bxlemuex8ilgj" path="res://Scripts/Captura de pantalla 2026-09-17 121459.png" id="6_d21ai"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfkbx"]
-size = Vector2(262, 84.5)
+size = Vector2(2437, 50.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("2_0e48y")
@@ -77,35 +78,35 @@ region = Rect2(1152, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(2, 36, 127, 92)
+region = Rect2(0, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(129, 36, 127, 92)
+region = Rect2(128, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(256, 36, 127, 92)
+region = Rect2(256, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(383, 36, 127, 92)
+region = Rect2(384, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(510, 36, 127, 92)
+region = Rect2(512, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(637, 36, 127, 92)
+region = Rect2(640, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(764, 36, 127, 92)
+region = Rect2(768, 31, 128, 97)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
 atlas = ExtResource("4_0hol4")
-region = Rect2(891, 36, 127, 92)
+region = Rect2(896, 31, 128, 97)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lfkbx"]
 animations = [{
@@ -129,7 +130,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rj586")
 }],
 "loop": 1,
-"name": &"Iddle",
+"name": &"Idle",
 "speed": 8.0
 }, {
 "frames": [{
@@ -208,26 +209,42 @@ disable_mode = 1
 physics_material_override = SubResource("PhysicsMaterial_q6r6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=2121905263]
+position = Vector2(273.5, 17.125)
 shape = SubResource("RectangleShape2D_lfkbx")
 
-[node name="Sprite2D" type="Sprite2D" parent="Suelo" unique_id=1907578046]
-position = Vector2(-7.6293945e-06, -9.536743e-07)
-scale = Vector2(2.09375, 0.671875)
-texture = ExtResource("1_epypp")
+[node name="CapturaDePantalla20260917122859" type="Sprite2D" parent="Suelo" unique_id=495734675]
+position = Vector2(-537, 7)
+scale = Vector2(0.6374224, 1)
+texture = ExtResource("1_kdubu")
+
+[node name="CapturaDePantalla20260917122860" type="Sprite2D" parent="Suelo" unique_id=1213666193]
+position = Vector2(275, 7)
+scale = Vector2(0.6374224, 1)
+texture = ExtResource("1_kdubu")
+
+[node name="CapturaDePantalla20260917122861" type="Sprite2D" parent="Suelo" unique_id=1722462476]
+position = Vector2(1082, 7)
+scale = Vector2(0.6374224, 1)
+texture = ExtResource("1_kdubu")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1325357673]
-position = Vector2(2, -70)
+position = Vector2(-22, -117)
 script = ExtResource("1_wtcfe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1878213253]
 position = Vector2(-1.0000066, -40)
 scale = Vector2(0.7578126, 0.80593544)
 sprite_frames = SubResource("SpriteFrames_lfkbx")
-animation = &"Jump"
-autoplay = "Iddle"
+animation = &"Walk"
+autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1821263747]
 position = Vector2(-3, -34)
+
+[node name="CapturaDePantalla20260917121459" type="Sprite2D" parent="CharacterBody2D/Camera2D" unique_id=1249262461]
+z_index = -2
+position = Vector2(26, -163)
+texture = ExtResource("6_d21ai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=785280473]
 position = Vector2(-1.999996, -31)
