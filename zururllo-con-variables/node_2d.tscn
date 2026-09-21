@@ -1,16 +1,32 @@
 [gd_scene format=3 uid="uid://biiw443faryao"]
 
-[ext_resource type="Texture2D" uid="uid://yq1hlddjk3fa" path="res://Scripts/Captura de pantalla 2026-09-17 122859.png" id="1_kdubu"]
+[ext_resource type="Texture2D" uid="uid://c3pmbrbrs8nrf" path="res://Sprites carretera/Carretera.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://bitjv0b5nnpy2" path="res://Scripts/character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://o3jk7km3t1t5" path="res://Scripts/Sprites/Fighter/Idle.png" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://b3xmmk3j6qqwi" path="res://Scripts/Sprites/Fighter/Walk.png" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://bp3c6ljb71x6h" path="res://Scripts/Sprites/Fighter/Jump.png" id="4_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://bxlemuex8ilgj" path="res://Scripts/Captura de pantalla 2026-09-17 121459.png" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://b4sfpgxssjo3s" path="res://Scripts/Sprites/Fighter/Dead.png" id="6_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://t47lduppcd6h" path="res://Sprites carretera/Quita Miedos.png" id="7_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://dvklh5y680bci" path="res://Sprites carretera/Farola.png" id="8_hqns4"]
+[ext_resource type="Texture2D" uid="uid://d062bbduqhcyk" path="res://Sprites carretera/Luz.png" id="9_x0ka3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6r6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfkbx"]
 size = Vector2(2437, 50.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fr6y"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(0, 42, 128, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(128, 42, 128, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxd8"]
+atlas = ExtResource("6_ir8iy")
+region = Rect2(256, 42, 128, 86)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("2_0e48y")
@@ -112,6 +128,20 @@ region = Rect2(896, 31, 128, 97)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1fr6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hxjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebxd8")
+}],
+"loop": 0,
+"name": &"Dead",
+"speed": 4.5
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_epypp")
 }, {
 "duration": 1.0,
@@ -199,8 +229,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77to7"]
-radius = 319.99976
-height = 1151.999
+radius = 191.9997
+height = 695.2617
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aui74"]
+size = Vector2(3705, 305)
 
 [node name="Node2D" type="Node2D" unique_id=912788168]
 
@@ -212,41 +245,163 @@ physics_material_override = SubResource("PhysicsMaterial_q6r6c")
 position = Vector2(273.5, 17.125)
 shape = SubResource("RectangleShape2D_lfkbx")
 
-[node name="CapturaDePantalla20260917122859" type="Sprite2D" parent="Suelo" unique_id=495734675]
-position = Vector2(-537, 7)
-scale = Vector2(0.6374224, 1)
-texture = ExtResource("1_kdubu")
+[node name="Carretera" type="Sprite2D" parent="Suelo" unique_id=217099800]
+top_level = true
+z_as_relative = false
+position = Vector2(952.00006, -653)
+scale = Vector2(0.05199999, 0.0906)
+texture = ExtResource("1_4d7sh")
+centered = false
 
-[node name="CapturaDePantalla20260917122860" type="Sprite2D" parent="Suelo" unique_id=1213666193]
-position = Vector2(275, 7)
-scale = Vector2(0.6374224, 1)
-texture = ExtResource("1_kdubu")
+[node name="Carretera2" type="Sprite2D" parent="Suelo" unique_id=1331728774]
+top_level = true
+z_as_relative = false
+position = Vector2(-956.9999, -654.00006)
+scale = Vector2(0.05199999, 0.0906)
+texture = ExtResource("1_4d7sh")
+centered = false
 
-[node name="CapturaDePantalla20260917122861" type="Sprite2D" parent="Suelo" unique_id=1722462476]
-position = Vector2(1082, 7)
-scale = Vector2(0.6374224, 1)
-texture = ExtResource("1_kdubu")
+[node name="Carretera3" type="Sprite2D" parent="Suelo" unique_id=773356054]
+top_level = true
+z_as_relative = false
+position = Vector2(-442.99997, -654.00006)
+scale = Vector2(0.05199999, 0.0906)
+texture = ExtResource("1_4d7sh")
+centered = false
+
+[node name="Carretera4" type="Sprite2D" parent="Suelo" unique_id=1655430592]
+top_level = true
+z_as_relative = false
+position = Vector2(69.00007, -654)
+scale = Vector2(0.05199999, 0.0906)
+texture = ExtResource("1_4d7sh")
+centered = false
+
+[node name="Carretera5" type="Sprite2D" parent="Suelo" unique_id=1732033309]
+top_level = true
+z_as_relative = false
+position = Vector2(588.00006, -653.00006)
+scale = Vector2(0.05199999, 0.0906)
+texture = ExtResource("1_4d7sh")
+centered = false
+
+[node name="QuitaMiedos" type="Sprite2D" parent="Suelo" unique_id=756999791]
+z_index = 1
+position = Vector2(-762, -37)
+scale = Vector2(0.032137502, 0.03328489)
+texture = ExtResource("7_ir8iy")
+
+[node name="Farola" type="Sprite2D" parent="Suelo" unique_id=2095778297]
+z_index = 2
+position = Vector2(-735, -65)
+scale = Vector2(0.04361139, 0.031869676)
+texture = ExtResource("8_hqns4")
+
+[node name="QuitaMiedos2" type="Sprite2D" parent="Suelo" unique_id=1715741333]
+z_index = 1
+position = Vector2(-444.00003, -37)
+scale = Vector2(0.032137502, 0.03328489)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos3" type="Sprite2D" parent="Suelo" unique_id=2103079072]
+z_index = 1
+position = Vector2(-126.00001, -36.999996)
+scale = Vector2(0.032137502, 0.03328489)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos4" type="Sprite2D" parent="Suelo" unique_id=108000848]
+z_index = 1
+position = Vector2(192, -36.99999)
+scale = Vector2(0.032137502, 0.03328489)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos5" type="Sprite2D" parent="Suelo" unique_id=779765826]
+z_index = 1
+position = Vector2(510.00003, -37)
+scale = Vector2(0.032137502, 0.03328489)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos6" type="Sprite2D" parent="Suelo" unique_id=2143248983]
+z_index = 1
+position = Vector2(828.00006, -36.999996)
+scale = Vector2(0.032137502, 0.03328489)
+texture = ExtResource("7_ir8iy")
+
+[node name="Farola2" type="Sprite2D" parent="Suelo" unique_id=6529203]
+z_index = 1
+position = Vector2(-400, -65)
+scale = Vector2(0.04361139, 0.031869676)
+texture = ExtResource("8_hqns4")
+
+[node name="Farola3" type="Sprite2D" parent="Suelo" unique_id=174806774]
+z_index = 1
+position = Vector2(-62, -65)
+scale = Vector2(0.04361139, 0.031869676)
+texture = ExtResource("8_hqns4")
+
+[node name="Farola4" type="Sprite2D" parent="Suelo" unique_id=860825370]
+z_index = 1
+position = Vector2(274, -65)
+scale = Vector2(0.04361139, 0.031869676)
+texture = ExtResource("8_hqns4")
+
+[node name="Farola5" type="Sprite2D" parent="Suelo" unique_id=29355246]
+z_index = 1
+position = Vector2(610, -65)
+scale = Vector2(0.04361139, 0.031869676)
+texture = ExtResource("8_hqns4")
+
+[node name="Luz" type="Sprite2D" parent="Suelo" unique_id=1222121616]
+self_modulate = Color(0.62484145, 0.62484145, 0.62484145, 0.7921569)
+z_index = 3
+position = Vector2(-912, -48)
+scale = Vector2(0.04385872, 0.03383686)
+texture = ExtResource("9_x0ka3")
+
+[node name="Luz2" type="Sprite2D" parent="Suelo" unique_id=1308814148]
+self_modulate = Color(0.62484145, 0.62484145, 0.62484145, 0.7921569)
+z_index = 3
+position = Vector2(-729.00006, -48)
+scale = Vector2(0.04385872, 0.03383686)
+texture = ExtResource("9_x0ka3")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1325357673]
 position = Vector2(-22, -117)
 script = ExtResource("1_wtcfe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1878213253]
-position = Vector2(-1.0000066, -40)
-scale = Vector2(0.7578126, 0.80593544)
+z_index = 2
+position = Vector2(-3, -42)
+scale = Vector2(0.46484378, 0.5163698)
 sprite_frames = SubResource("SpriteFrames_lfkbx")
-animation = &"Walk"
+animation = &"Dead"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1821263747]
 position = Vector2(-3, -34)
+zoom = Vector2(1.5, 1.5)
+drag_vertical_offset = -1.0
 
 [node name="CapturaDePantalla20260917121459" type="Sprite2D" parent="CharacterBody2D/Camera2D" unique_id=1249262461]
 z_index = -2
-position = Vector2(26, -163)
+position = Vector2(48, -141)
 texture = ExtResource("6_d21ai")
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=785280473]
-position = Vector2(-1.999996, -31)
+[node name="ColisionPJ" type="CollisionShape2D" parent="CharacterBody2D" unique_id=785280473]
+z_index = 2
+position = Vector2(-4, -35)
 scale = Vector2(0.031250026, 0.066162124)
 shape = SubResource("CapsuleShape2D_77to7")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=431780017]
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=894888608]
+position = Vector2(-164, 413)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Zona Muerte" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1787644899]
+position = Vector2(292, -178)
+shape = SubResource("RectangleShape2D_aui74")
+debug_color = Color(0.996893, 0, 0.18682808, 0.41960785)

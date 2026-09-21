@@ -3,7 +3,11 @@ const SPEED = 200
 const JUMP_SPEED = -400
 @onready var animated_sprite = $AnimatedSprite2D
 var jumpCont=3;
+var deadAreaYes= false
 
+
+func _ready():
+		a.sprite_frames.set_animation_loop_mode("Dead", SpriteFrames.LoopMode.LOOP_NONE)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -48,5 +52,7 @@ func _physics_process(delta: float) -> void:
 #"Walk"
 	else:
 		animated_sprite.play("Jump")
-		
+	
+	
+	
 	move_and_slide()
