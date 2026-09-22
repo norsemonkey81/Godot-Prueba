@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b4sfpgxssjo3s" path="res://Scripts/Sprites/Fighter/Dead.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://t47lduppcd6h" path="res://Sprites carretera/Quita Miedos.png" id="7_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://dvklh5y680bci" path="res://Sprites carretera/Farola.png" id="8_hqns4"]
-[ext_resource type="Texture2D" uid="uid://d062bbduqhcyk" path="res://Sprites carretera/Luz.png" id="9_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://docickcwe1nu6" path="res://Sprites carretera/Plantas.png" id="10_ir8iy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6r6c"]
 
@@ -198,6 +198,11 @@ animations = [{
 "name": &"Jump",
 "speed": 12.0
 }, {
+"frames": [],
+"loop": 1,
+"name": &"Run",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4d7sh")
@@ -245,15 +250,15 @@ physics_material_override = SubResource("PhysicsMaterial_q6r6c")
 position = Vector2(273.5, 17.125)
 shape = SubResource("RectangleShape2D_lfkbx")
 
-[node name="Carretera" type="Sprite2D" parent="Suelo" unique_id=217099800]
+[node name="Carretera" type="Sprite2D" parent="Suelo/CollisionShape2D" unique_id=217099800]
 top_level = true
 z_as_relative = false
-position = Vector2(952.00006, -653)
+position = Vector2(952.00006, -654)
 scale = Vector2(0.05199999, 0.0906)
 texture = ExtResource("1_4d7sh")
 centered = false
 
-[node name="Carretera2" type="Sprite2D" parent="Suelo" unique_id=1331728774]
+[node name="Carretera2" type="Sprite2D" parent="Suelo/CollisionShape2D/Carretera" unique_id=1331728774]
 top_level = true
 z_as_relative = false
 position = Vector2(-956.9999, -654.00006)
@@ -261,7 +266,7 @@ scale = Vector2(0.05199999, 0.0906)
 texture = ExtResource("1_4d7sh")
 centered = false
 
-[node name="Carretera3" type="Sprite2D" parent="Suelo" unique_id=773356054]
+[node name="Carretera3" type="Sprite2D" parent="Suelo/CollisionShape2D/Carretera" unique_id=773356054]
 top_level = true
 z_as_relative = false
 position = Vector2(-442.99997, -654.00006)
@@ -269,7 +274,7 @@ scale = Vector2(0.05199999, 0.0906)
 texture = ExtResource("1_4d7sh")
 centered = false
 
-[node name="Carretera4" type="Sprite2D" parent="Suelo" unique_id=1655430592]
+[node name="Carretera4" type="Sprite2D" parent="Suelo/CollisionShape2D/Carretera" unique_id=1655430592]
 top_level = true
 z_as_relative = false
 position = Vector2(69.00007, -654)
@@ -277,10 +282,10 @@ scale = Vector2(0.05199999, 0.0906)
 texture = ExtResource("1_4d7sh")
 centered = false
 
-[node name="Carretera5" type="Sprite2D" parent="Suelo" unique_id=1732033309]
+[node name="Carretera5" type="Sprite2D" parent="Suelo/CollisionShape2D/Carretera" unique_id=1732033309]
 top_level = true
 z_as_relative = false
-position = Vector2(588.00006, -653.00006)
+position = Vector2(588, -654.00006)
 scale = Vector2(0.05199999, 0.0906)
 texture = ExtResource("1_4d7sh")
 centered = false
@@ -291,79 +296,206 @@ position = Vector2(-762, -37)
 scale = Vector2(0.032137502, 0.03328489)
 texture = ExtResource("7_ir8iy")
 
+[node name="QuitaMiedos2" type="Sprite2D" parent="Suelo/QuitaMiedos" unique_id=1715741333]
+z_index = 1
+position = Vector2(9894.98, 0)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos3" type="Sprite2D" parent="Suelo/QuitaMiedos" unique_id=2103079072]
+z_index = 1
+position = Vector2(19789.963, 0.00012207031)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos4" type="Sprite2D" parent="Suelo/QuitaMiedos" unique_id=108000848]
+z_index = 1
+position = Vector2(29684.945, 0.00024414063)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos5" type="Sprite2D" parent="Suelo/QuitaMiedos" unique_id=779765826]
+z_index = 1
+position = Vector2(39579.93, 0)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("7_ir8iy")
+
+[node name="QuitaMiedos6" type="Sprite2D" parent="Suelo/QuitaMiedos" unique_id=2143248983]
+z_index = 1
+position = Vector2(49474.914, 0.00012207031)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("7_ir8iy")
+
 [node name="Farola" type="Sprite2D" parent="Suelo" unique_id=2095778297]
 z_index = 2
-position = Vector2(-735, -65)
-scale = Vector2(0.04361139, 0.031869676)
+position = Vector2(-735, -81.50001)
+scale = Vector2(0.04361139, 0.04355523)
 texture = ExtResource("8_hqns4")
 
-[node name="QuitaMiedos2" type="Sprite2D" parent="Suelo" unique_id=1715741333]
-z_index = 1
-position = Vector2(-444.00003, -37)
-scale = Vector2(0.032137502, 0.03328489)
-texture = ExtResource("7_ir8iy")
-
-[node name="QuitaMiedos3" type="Sprite2D" parent="Suelo" unique_id=2103079072]
-z_index = 1
-position = Vector2(-126.00001, -36.999996)
-scale = Vector2(0.032137502, 0.03328489)
-texture = ExtResource("7_ir8iy")
-
-[node name="QuitaMiedos4" type="Sprite2D" parent="Suelo" unique_id=108000848]
-z_index = 1
-position = Vector2(192, -36.99999)
-scale = Vector2(0.032137502, 0.03328489)
-texture = ExtResource("7_ir8iy")
-
-[node name="QuitaMiedos5" type="Sprite2D" parent="Suelo" unique_id=779765826]
-z_index = 1
-position = Vector2(510.00003, -37)
-scale = Vector2(0.032137502, 0.03328489)
-texture = ExtResource("7_ir8iy")
-
-[node name="QuitaMiedos6" type="Sprite2D" parent="Suelo" unique_id=2143248983]
-z_index = 1
-position = Vector2(828.00006, -36.999996)
-scale = Vector2(0.032137502, 0.03328489)
-texture = ExtResource("7_ir8iy")
-
-[node name="Farola2" type="Sprite2D" parent="Suelo" unique_id=6529203]
-z_index = 1
-position = Vector2(-400, -65)
-scale = Vector2(0.04361139, 0.031869676)
+[node name="Farola2" type="Sprite2D" parent="Suelo/Farola" unique_id=6529203]
+position = Vector2(7681.4814, 22.959106)
+scale = Vector2(1.0000001, 0.98374003)
 texture = ExtResource("8_hqns4")
 
-[node name="Farola3" type="Sprite2D" parent="Suelo" unique_id=174806774]
-z_index = 1
-position = Vector2(-62, -65)
-scale = Vector2(0.04361139, 0.031869676)
+[node name="Farola3" type="Sprite2D" parent="Suelo/Farola" unique_id=174806774]
+position = Vector2(15431.751, 22.959106)
+scale = Vector2(1.0000001, 0.98374003)
 texture = ExtResource("8_hqns4")
 
-[node name="Farola4" type="Sprite2D" parent="Suelo" unique_id=860825370]
-z_index = 1
-position = Vector2(274, -65)
-scale = Vector2(0.04361139, 0.031869676)
+[node name="Farola4" type="Sprite2D" parent="Suelo/Farola" unique_id=860825370]
+position = Vector2(23136.162, 34.438965)
+scale = Vector2(1.0000001, 0.9756097)
 texture = ExtResource("8_hqns4")
 
-[node name="Farola5" type="Sprite2D" parent="Suelo" unique_id=29355246]
-z_index = 1
-position = Vector2(610, -65)
-scale = Vector2(0.04361139, 0.031869676)
+[node name="Farola5" type="Sprite2D" parent="Suelo/Farola" unique_id=29355246]
+position = Vector2(30840.568, 34.438965)
+scale = Vector2(1.0000001, 0.9756097)
 texture = ExtResource("8_hqns4")
 
-[node name="Luz" type="Sprite2D" parent="Suelo" unique_id=1222121616]
-self_modulate = Color(0.62484145, 0.62484145, 0.62484145, 0.7921569)
-z_index = 3
-position = Vector2(-912, -48)
-scale = Vector2(0.04385872, 0.03383686)
-texture = ExtResource("9_x0ka3")
+[node name="Plantas" type="Sprite2D" parent="Suelo" unique_id=111622608]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(-895.99994, 40.999992)
+scale = Vector2(0.063288845, 0.07469357)
+texture = ExtResource("10_ir8iy")
 
-[node name="Luz2" type="Sprite2D" parent="Suelo" unique_id=1308814148]
-self_modulate = Color(0.62484145, 0.62484145, 0.62484145, 0.7921569)
-z_index = 3
-position = Vector2(-729.00006, -48)
-scale = Vector2(0.04385872, 0.03383686)
-texture = ExtResource("9_x0ka3")
+[node name="Plantas" type="Sprite2D" parent="Suelo/Plantas" unique_id=407049480]
+modulate = Color(0.6183023, 0.24038708, 0.5657446, 1)
+z_index = 4
+position = Vector2(3428.7246, 401.6411)
+scale = Vector2(3.8241036, 1.3205128)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas2" type="Sprite2D" parent="Suelo/Plantas" unique_id=1858682964]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(1027.0361, 40.164063)
+scale = Vector2(1.0614042, 1)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas3" type="Sprite2D" parent="Suelo/Plantas" unique_id=1952874172]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(2575.4932, 93.71619)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas4" type="Sprite2D" parent="Suelo/Plantas" unique_id=2035249678]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(4139.75, 120.49225)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas5" type="Sprite2D" parent="Suelo/Plantas" unique_id=1256684175]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(5751.408, 107.10425)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas6" type="Sprite2D" parent="Suelo/Plantas" unique_id=1667298]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(7552.674, 120.49225)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas7" type="Sprite2D" parent="Suelo/Plantas" unique_id=339851625]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(1027.0361, 40.164063)
+scale = Vector2(1.0614042, 1)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas8" type="Sprite2D" parent="Suelo/Plantas" unique_id=1316196995]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(2575.4932, 93.71619)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas9" type="Sprite2D" parent="Suelo/Plantas" unique_id=1471201649]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(4139.75, 120.49225)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas10" type="Sprite2D" parent="Suelo/Plantas" unique_id=606850843]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(5751.408, 107.10425)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas11" type="Sprite2D" parent="Suelo/Plantas" unique_id=649305620]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(7552.674, 120.49225)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas12" type="Sprite2D" parent="Suelo/Plantas" unique_id=1227342676]
+modulate = Color(0.6183023, 0.24038708, 0.5657446, 1)
+z_index = 4
+position = Vector2(2999.6384, 917.9173)
+scale = Vector2(3.8241036, 1.3205128)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas13" type="Sprite2D" parent="Suelo/Plantas" unique_id=401465955]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(597.9499, 556.44025)
+scale = Vector2(1.0614042, 1)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas14" type="Sprite2D" parent="Suelo/Plantas" unique_id=798295575]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(2146.407, 609.9924)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas15" type="Sprite2D" parent="Suelo/Plantas" unique_id=1468184519]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(3710.6638, 636.76843)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas16" type="Sprite2D" parent="Suelo/Plantas" unique_id=1153128948]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(5322.322, 623.38043)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas17" type="Sprite2D" parent="Suelo/Plantas" unique_id=806730394]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(7123.5874, 636.76843)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas18" type="Sprite2D" parent="Suelo/Plantas" unique_id=1837086600]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(597.9499, 556.44025)
+scale = Vector2(1.0614042, 1)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas19" type="Sprite2D" parent="Suelo/Plantas" unique_id=1004045283]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(2146.407, 609.9924)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas20" type="Sprite2D" parent="Suelo/Plantas" unique_id=187178584]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(3710.6638, 636.76843)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas21" type="Sprite2D" parent="Suelo/Plantas" unique_id=1204518131]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(5322.322, 623.38043)
+texture = ExtResource("10_ir8iy")
+
+[node name="Plantas22" type="Sprite2D" parent="Suelo/Plantas" unique_id=967010644]
+modulate = Color(1.3618447, 0.72789526, 0.8055217, 1)
+z_index = 4
+position = Vector2(7123.5874, 636.76843)
+texture = ExtResource("10_ir8iy")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1325357673]
 position = Vector2(-22, -117)
@@ -374,13 +506,16 @@ z_index = 2
 position = Vector2(-3, -42)
 scale = Vector2(0.46484378, 0.5163698)
 sprite_frames = SubResource("SpriteFrames_lfkbx")
-animation = &"Dead"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1821263747]
 position = Vector2(-3, -34)
 zoom = Vector2(1.5, 1.5)
-drag_vertical_offset = -1.0
+drag_vertical_offset = -0.12
+drag_left_margin = 0.47
+drag_top_margin = 0.0
+drag_bottom_margin = 0.81
 
 [node name="CapturaDePantalla20260917121459" type="Sprite2D" parent="CharacterBody2D/Camera2D" unique_id=1249262461]
 z_index = -2
@@ -398,10 +533,10 @@ shape = SubResource("CapsuleShape2D_77to7")
 
 [node name="Area2D" type="Area2D" parent="Node2D" unique_id=894888608]
 position = Vector2(-164, 413)
-collision_layer = 3
-collision_mask = 3
 
 [node name="Zona Muerte" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=1787644899]
 position = Vector2(292, -178)
 shape = SubResource("RectangleShape2D_aui74")
 debug_color = Color(0.996893, 0, 0.18682808, 0.41960785)
+
+[connection signal="body_entered" from="Node2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]

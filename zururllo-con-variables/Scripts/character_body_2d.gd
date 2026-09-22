@@ -1,18 +1,18 @@
 extends CharacterBody2D
-const SPEED = 200
+const SPEED = 100
 const JUMP_SPEED = -400
 @onready var animated_sprite = $AnimatedSprite2D
 var jumpCont=3;
 var deadAreaYes= false
 
 
-func _ready():
-		a.sprite_frames.set_animation_loop_mode("Dead", SpriteFrames.LoopMode.LOOP_NONE)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity = velocity + get_gravity() * delta
-
+	if deadAreaYes:
+		velocity = Vector2.ZERO
+		return
 #Si personaje esta en el suelo, el contador de saltos se iguala a 0
 # y va aumentando 1 cada vez que pulsas la tecla de salto hasta 3, 
 # en cuanto llega a 3 el personaje pierde la capacidadd de salto hasta tocar suelo
@@ -52,7 +52,22 @@ func _physics_process(delta: float) -> void:
 #"Walk"
 	else:
 		animated_sprite.play("Jump")
-	
+		
 	
 	
 	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if deadAreaYes:
+		return
+
+	deadAreaYes = true
+	velocity = Vector2.ZERO
+
+	animated_sprite.play("Dead")
+
+	await animated_sprite.animation_finished
+
+	get_tree().reload_current_scene()
+
+	
